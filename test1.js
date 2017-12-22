@@ -28,7 +28,7 @@ function graph() {
   ctx.clearRect(0, 0, width, height);
   
   drawCircle(ctx, centerX, centerY, r);
-  plotPoints(ctx, points);
+  //plotPoints(ctx, points);
   drawLines(ctx, points, multiplicator);  
 }
 
