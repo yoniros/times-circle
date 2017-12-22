@@ -1,7 +1,12 @@
 $( document ).ready(function() {
-	$('#numOfPoints, #multiplier').on('input', function(e){
+	$('#numOfPoints, #multiplier').on('input', function(e) {
 	  graph();
 	});
+
+  $('#numOfPointsSlider').on('input', function(e) {
+    $('#numOfPoints').val($(e.target).val());
+    graph();
+  });
 
   graph();
 });
