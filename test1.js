@@ -1,5 +1,5 @@
 function graph() {
-  var canvas = document.getElementById("myCanvas");
+  var canvas = $('canvas')[0];
   var width = canvas.width;
   var height = canvas.height;
 
