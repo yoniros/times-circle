@@ -1,10 +1,11 @@
 $(document).ready(function() {
     $('#numOfPoints, #multiplier').on('input', function(e) {
+        updateSliders();
         graph();
     });
 
     $('#numOfPointsSlider').on('input', function(e) {
-        $('#numOfPoints').val($(e.target).val());
+        updateTextInputs();
         graph();
     });
 
@@ -84,4 +85,12 @@ function drawLines(ctx, points, multiplicator) {
         var j = (i * multiplicator) % points.length;
         drawLine(ctx, points, i, j);
     }
+}
+
+function updateSliders() {
+    $('#numOfPointsSlider').val($('#numOfPoints').val());
+}
+
+function updateTextInputs() {
+    $('#numOfPoints').val($('#numOfPointsSlider').val());
 }
