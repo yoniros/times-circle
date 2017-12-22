@@ -1,0 +1,13 @@
+#container {
+  display: table;
+}
+
+#left-cell {
+  display: table-cell;
+}
+
+#right-cell {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 20px;
+}
