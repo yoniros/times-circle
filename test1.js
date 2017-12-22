@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	$('#numOfPoints').on('input', function(e){
+	$('#numOfPoints, #multiplier').on('input', function(e){
 	  graph();
 	});
 
@@ -12,11 +12,10 @@ function graph() {
   var height = canvas.height;
 
   var r = height / 2 * 0.8;
-  var numOfPoints = getNumberOfPoints();
-  console.log(numOfPoints);
+  var numOfPoints = $('#numOfPoints').val();
   var centerX = width/2;
   var centerY = height/2;
-  var multiplicator = 2;
+  var multiplicator = $('#multiplier').val();
 
   var points = getPointsArray(numOfPoints, centerX, centerY, r);
 
@@ -79,11 +78,4 @@ function drawLines(ctx, points, multiplicator) {
     var j = (i * multiplicator) % points.length;
     drawLine(ctx, points, i, j);
   }
-}
-
-/**
- * Get the number of points from the HTML text input.
- */
-function getNumberOfPoints() {
-  return $('#numOfPoints').val();
 }
