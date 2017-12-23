@@ -4,11 +4,16 @@ $(document).ready(function() {
         graph();
     });
 
+    $('#MultiplicatorSlider').on('input', function(e) {
+        updateTextInputs();
+        graph();
+    });
+  
     $('#numOfPointsSlider').on('input', function(e) {
         updateTextInputs();
         graph();
     });
-
+    
     graph();
 });
 
@@ -29,7 +34,7 @@ function graph() {
     ctx.clearRect(0, 0, width, height);
 
     drawCircle(ctx, centerX, centerY, r);
-    // plotPoints(ctx, points);
+    //plotPoints(ctx, points);
     drawLines(ctx, points, multiplicator);
 }
 
@@ -89,8 +94,10 @@ function drawLines(ctx, points, multiplicator) {
 
 function updateSliders() {
     $('#numOfPointsSlider').val($('#numOfPoints').val());
+    $('#MultiplicatorSlider').val($('#multiplier').val());
 }
 
 function updateTextInputs() {
     $('#numOfPoints').val($('#numOfPointsSlider').val());
+    $('#multiplier').val($('#MultiplicatorSlider').val());
 }
