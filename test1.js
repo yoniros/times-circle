@@ -7,12 +7,7 @@ $(document).ready(function() {
         graph();
     });
 
-    $('#MultiplicatorSlider').on('input', function(e) {
-        updateTextInputs();
-        graph();
-    });
-  
-    $('#numOfPointsSlider').on('input', function(e) {
+    $('#multiplicatorSlider, #numOfPointsSlider').on('input', function(e) {
         updateTextInputs();
         graph();
     });
@@ -106,12 +101,12 @@ $(document).ready(function() {
 
     function updateSliders() {
         $('#numOfPointsSlider').val($('#numOfPoints').val());
-        $('#MultiplicatorSlider').val($('#multiplier').val());
+        $('#multiplicatorSlider').val($('#multiplier').val());
     }
     
     function updateTextInputs() {
         $('#numOfPoints').val($('#numOfPointsSlider').val());
-        $('#multiplier').val($('#MultiplicatorSlider').val());
+        $('#multiplier').val($('#multiplicatorSlider').val());
     }
 
     function generateColorMap(numOfColors) {
