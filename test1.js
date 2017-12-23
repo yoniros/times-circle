@@ -29,7 +29,7 @@ $(document).ready(function() {
         var numOfPoints = $('#numOfPoints').val();
         var centerX = width / 2;
         var centerY = height / 2;
-        var multiplicator = $('#multiplier').val();
+        var multiplicator = Math.round($('#multiplier').val());
 
         var points = getPointsArray(numOfPoints, centerX, centerY, r);
 
